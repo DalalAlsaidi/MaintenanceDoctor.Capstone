@@ -8,6 +8,8 @@
 import UIKit
 import MBProgressHUD
 
+var cartBadge = 0
+
 class HomeVC: BaseViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -18,11 +20,15 @@ class HomeVC: BaseViewController {
     var productsData = [ProductModel]()
     var searchedData = [ProductModel]()
     
+    let badgeSize: CGFloat = 20
+    let badgeTag = 9830384
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        NotificationCenter.default.addObserver(self, selector: #selector(setBadgeCount), name: .newOrder, object: nil)
-        setBadgeCount()
+        NotificationCenter.default.addObserver(self, selector: #selector(setNotificationBadgeCount), name: .newOrder, object: nil)
+        setNotificationBadgeCount()
+        setMyCartBadgeCount()
         onCallProducts()
         searchTextField.text = ""
     }
@@ -31,13 +37,42 @@ class HomeVC: BaseViewController {
         super.viewDidLoad()
         productionCollectionView.dataSource = self
         productionCollectionView.delegate = self
+    }    
+    
+    @objc func setNotificationBadgeCount() {
+        FirebaseAPI.getUserNotification(g_user.id) { (isSucess, result) in
+            self.hud.hide(animated: true)
+            if isSucess {
+                var notificationData = [NotificationModel]()
+                notificationData = result as! [NotificationModel]
+                let badgeCount = notificationData.count
+                if badgeCount <= 0 {
+                    self.tabBarController?.tabBar.items![3].badgeValue = nil
+                } else {
+                    self.tabBarController?.tabBar.items![3].badgeValue = "\(badgeCount)"
+                }
+            } else {
+                let msg = result as! String
+                print(msg)
+            }
+        }
     }
     
-    @objc func setBadgeCount() {
-        if UIApplication.shared.applicationIconBadgeNumber <= 0 {
-            self.tabBarController?.tabBar.items![3].badgeValue = nil
-        } else {
-            self.tabBarController?.tabBar.items![3].badgeValue = "\(UIApplication.shared.applicationIconBadgeNumber)"
+    func setMyCartBadgeCount() {
+        FirebaseAPI.getMyCarts(g_user.id) { (isSucess, result) in
+            if isSucess {
+                var cartData = [CartModel]()
+                cartData = result as! [CartModel]
+                cartBadge = cartData.count
+                if cartBadge <= 0 {
+                    self.tabBarController?.tabBar.items![1].badgeValue = nil
+                } else {
+                    self.tabBarController?.tabBar.items![1].badgeValue = "\(cartBadge)"
+                }
+            } else {
+                let msg = result as! String
+                self.showToast(msg)
+            }
         }
     }
     

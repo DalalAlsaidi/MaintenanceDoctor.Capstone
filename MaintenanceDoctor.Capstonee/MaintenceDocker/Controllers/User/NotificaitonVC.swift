@@ -32,10 +32,7 @@ class NotificaitonVC: BaseViewController {
     }
     
     @objc func loadData() {
-        self.hud = self.progressHUD(view: self.view, mode: .indeterminate)
-        self.hud.show(animated: true)
         FirebaseAPI.getUserNotification(user_id) { (isSucess, result) in
-            self.hud.hide(animated: true)
             if isSucess {
                 self.notificationData = result as! [NotificationModel]
                 self.notificationTableView.reloadData()
@@ -48,10 +45,11 @@ class NotificaitonVC: BaseViewController {
     }
     
     func setBadgeCount() {
-        if UIApplication.shared.applicationIconBadgeNumber <= 0 {
+        let badgeCount = notificationData.count
+        if badgeCount <= 0 {
             self.tabBarController?.tabBar.items![3].badgeValue = nil
         } else {
-            self.tabBarController?.tabBar.items![3].badgeValue = "\(UIApplication.shared.applicationIconBadgeNumber)"
+            self.tabBarController?.tabBar.items![3].badgeValue = "\(badgeCount)"
         }
     }
 

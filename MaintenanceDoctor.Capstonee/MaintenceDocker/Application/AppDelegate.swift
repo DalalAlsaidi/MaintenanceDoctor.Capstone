@@ -11,9 +11,11 @@ import Firebase
 import UserNotifications
 import FirebaseMessaging
 import SwiftMessages
+import GoogleMaps
 
 var deviceTokenString = ""
 var myUDID = ""
+let googleApiKey = "AIzaSyCvpZNrwmpRl7POZaKGcBhy4cZ2_vvi7K0"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,13 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //IQKeyboardManager enable
         IQKeyboardManager.shared.enable = true
+        
         //splash page delay for 3 seconds
         Thread.sleep(forTimeInterval: 3.0)
+        
         //Push Notification setting
         let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert,UIUserNotificationType.badge, UIUserNotificationType.sound]
         let pushNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
         application.registerUserNotificationSettings(pushNotificationSettings)
         registerForPushNotifications()
+        
+        //Google map service
+        GMSServices.provideAPIKey(googleApiKey)
         return true
     }
 

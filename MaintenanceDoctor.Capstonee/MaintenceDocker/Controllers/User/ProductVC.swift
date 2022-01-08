@@ -25,6 +25,7 @@ class ProductVC: BaseViewController {
     var imageData = [String]()
     var alamofireSources = [AlamofireSource]()
     var product_id = ""
+    
     var quantity = 0
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,7 +102,7 @@ class ProductVC: BaseViewController {
     
     @IBAction func onClickPhone(_ sender: Any) {
         
-        let urlWhats = "whatsapp://send?phone=+12345677862"
+        let urlWhats = "whatsapp://send?phone=+19293564362"
         
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
             if let whatsappURL = NSURL(string: urlString) {

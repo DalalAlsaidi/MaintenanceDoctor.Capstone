@@ -36,21 +36,17 @@ class AdminNotificationVC: BaseViewController {
             if isSucess {
                 self.notificationData = result as! [NotificationModel]
                 self.notificationTableView.reloadData()
-                self.setBadgeCount()
+                if self.notificationData.count <= 0 {
+                    self.tabBarController?.tabBar.items![3].badgeValue = nil
+                } else {
+                    self.tabBarController?.tabBar.items![3].badgeValue = "\(self.notificationData.count)"
+                }
             } else {
                 let msg = result as! String
                 self.showToast(msg)
             }
         }
-    }
-    
-    func setBadgeCount() {
-        if UIApplication.shared.applicationIconBadgeNumber <= 0 {
-            self.tabBarController?.tabBar.items![3].badgeValue = nil
-        } else {
-            self.tabBarController?.tabBar.items![3].badgeValue = "\(UIApplication.shared.applicationIconBadgeNumber)"
-        }
-    }
+    }    
 }
 //MARK: - TableView DataSource, Delegate
 extension AdminNotificationVC: UITableViewDataSource, UITableViewDelegate {
@@ -76,27 +72,19 @@ extension AdminNotificationVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let toVC = self.storyboard?.instantiateViewController( withIdentifier: "OneOrderVC") as! OneOrderVC
-        toVC.sender_id = notificationData[indexPath.row].sender
-        toVC.orderIDs = notificationData[indexPath.row].order_ids
-        toVC.notificationId = notificationData[indexPath.row].id
-        self.navigationController?.pushViewController(toVC, animated: true)
-        
-        
-//        FirebaseAPI.deleteNotification(notificationData[indexPath.row].id, "order") { (isSucess, result) in
-//            self.hud.hide(animated: true)
-//            if isSucess {
-//                if UIApplication.shared.applicationIconBadgeNumber > 0 {
-//                    UIApplication.shared.applicationIconBadgeNumber -= 1
-//                }
-//                self.notificationData.remove(at: indexPath.row)
-//                self.notificationTableView.reloadData()
-//                self.setBadgeCount()
-//            } else {
-//                let msg = result
-//                self.showToast(msg)
-//            }
-//        }
+        if notificationData[indexPath.row].description.contains("requested to repair") {
+            let toVC = self.storyboard?.instantiateViewController( withIdentifier: "RepairOrderVC") as! RepairOrderVC
+            toVC.order_id = notificationData[indexPath.row].order_ids[0]
+            toVC.sender = notificationData[indexPath.row].sender
+            toVC.notificationId = notificationData[indexPath.row].id
+            self.navigationController?.pushViewController(toVC, animated: true)
+        } else {
+            let toVC = self.storyboard?.instantiateViewController( withIdentifier: "OneOrderVC") as! OneOrderVC
+            toVC.sender_id = notificationData[indexPath.row].sender
+            toVC.orderIDs = notificationData[indexPath.row].order_ids
+            toVC.notificationId = notificationData[indexPath.row].id
+            self.navigationController?.pushViewController(toVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

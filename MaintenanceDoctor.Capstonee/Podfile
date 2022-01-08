@@ -14,5 +14,6 @@ target 'MaintenceDocker' do
   pod 'MBProgressHUD'
   pod 'Alamofire'
   pod 'SwiftMessages'
-
+  pod 'GoogleMaps', '6.0.1'
+  
 end

@@ -97,6 +97,8 @@ class MyCartVC: BaseViewController {
                 self.orderButton.isHidden = true
                 self.cartData.removeAll()
                 self.cartTableView.reloadData()
+                cartBadge = 0
+                self.setBadge()
                 self.showAlertDialog(title: "", message: "Your Order is completed", positive: "Ok", negative: nil)
                 self.sendOrderNotification()
                 
@@ -111,8 +113,7 @@ class MyCartVC: BaseViewController {
             if isSuccess {
                 let tokens : [String] = result as! [String]
                 let sender = PushNotificationSender()
-                sender.sendAllPushNotification(to: tokens, title: "New Order", body: "\(g_user.userName) ordered the products", notiType: NotificationType.new_order.rawValue, id: self.user_id, image_url: g_user.photoUrl, orderIds: self.orderIds)
-                
+                sender.sendAllPushNotification(to: tokens, title: "New Product Order", body: "\(g_user.userName) ordered the products", notiType: NotificationType.new_order.rawValue, id: self.user_id, image_url: g_user.photoUrl, orderIds: self.orderIds)                
             } else {
                 print("Getting tokens failed")
             }
@@ -137,6 +138,14 @@ class MyCartVC: BaseViewController {
         }
     }
     
+    func setBadge() {
+        if cartBadge <= 0 {
+            self.tabBarController?.tabBar.items![1].badgeValue = nil
+        } else {
+            self.tabBarController?.tabBar.items![1].badgeValue = "\(cartBadge)"
+        }
+    }
+    
     func removeProductFromOrder() {
         FirebaseAPI.deleteOrderFromList(user_id, cartData[selectedProduct].id) { [self](isSucess, result) in
             if isSucess {
@@ -146,6 +155,8 @@ class MyCartVC: BaseViewController {
                     self.priceFixedLabel.isHidden = true
                     self.orderButton.isHidden = true
                 }
+                cartBadge -= 1
+                setBadge()
                 calculateTotalPrice()
                 cartTableView.reloadData()
             } else {
@@ -178,7 +189,7 @@ class MyCartVC: BaseViewController {
         for item in cartData {
             totalPrice += Float(item.quantity)! * Float(item.price)!
         }
-        totalPriceLabel.text = "SR" + String(format: "%.2f", totalPrice)
+        totalPriceLabel.text = "$" + String(format: "%.2f", totalPrice)
     }
     
 }

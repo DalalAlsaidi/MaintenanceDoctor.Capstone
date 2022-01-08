@@ -39,6 +39,9 @@
 		4037F7F227708A24000F69B1 /* OneOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4037F7F127708A24000F69B1 /* OneOrderVC.swift */; };
 		4037F7F627708B63000F69B1 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4037F7F527708B63000F69B1 /* OrderCell.swift */; };
 		4037F7F827708D45000F69B1 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4037F7F727708D45000F69B1 /* OrderModel.swift */; };
+		403BA2462784AE4A00EBB827 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403BA2452784AE4A00EBB827 /* MapVC.swift */; };
+		403BA2482784E48E00EBB827 /* RepairOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403BA2472784E48E00EBB827 /* RepairOrderCell.swift */; };
+		403BA24A2784E54400EBB827 /* RepairRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403BA2492784E54400EBB827 /* RepairRequestVC.swift */; };
 		405E9B082763DF64000CDDBF /* FirebaseAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E9B072763DF64000CDDBF /* FirebaseAPIs.swift */; };
 		405E9B0A2763E41B000CDDBF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E9B092763E41B000CDDBF /* UserModel.swift */; };
 		405E9B0C2763F3BD000CDDBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405E9B0B2763F3BD000CDDBF /* GoogleService-Info.plist */; };
@@ -88,6 +91,9 @@
 		40CF9857275FDD7B005BFB1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CF9855275FDD7B005BFB1C /* Main.storyboard */; };
 		40CF9859275FDD7D005BFB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CF9858275FDD7D005BFB1C /* Assets.xcassets */; };
 		40CF985C275FDD7D005BFB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CF985A275FDD7D005BFB1C /* LaunchScreen.storyboard */; };
+		40E57F72277BA41D00083455 /* RepairOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E57F71277BA41D00083455 /* RepairOrderModel.swift */; };
+		40E57F74277BB23400083455 /* RepairOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E57F73277BB23400083455 /* RepairOrderVC.swift */; };
+		40E65F30277B88C200113A2F /* RepairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E65F2F277B88C200113A2F /* RepairVC.swift */; };
 		40FEFCFE276A87BA00D1E6AF /* PushNotificatonSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FEFCFD276A87BA00D1E6AF /* PushNotificatonSender.swift */; };
 		40FEFD00276A919100D1E6AF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FEFCFF276A919100D1E6AF /* UIImage+Extension.swift */; };
 		4466BA82CC0123C0E3B41336 /* Pods_MaintenceDocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54E53D06C6619291C5F1510 /* Pods_MaintenceDocker.framework */; };
@@ -125,6 +131,9 @@
 		4037F7F127708A24000F69B1 /* OneOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneOrderVC.swift; sourceTree = "<group>"; };
 		4037F7F527708B63000F69B1 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		4037F7F727708D45000F69B1 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		403BA2452784AE4A00EBB827 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		403BA2472784E48E00EBB827 /* RepairOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairOrderCell.swift; sourceTree = "<group>"; };
+		403BA2492784E54400EBB827 /* RepairRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairRequestVC.swift; sourceTree = "<group>"; };
 		405E9B072763DF64000CDDBF /* FirebaseAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIs.swift; sourceTree = "<group>"; };
 		405E9B092763E41B000CDDBF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		405E9B0B2763F3BD000CDDBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -157,6 +166,9 @@
 		40CF9858275FDD7D005BFB1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40CF985B275FDD7D005BFB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40CF985D275FDD7D005BFB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40E57F71277BA41D00083455 /* RepairOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairOrderModel.swift; sourceTree = "<group>"; };
+		40E57F73277BB23400083455 /* RepairOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairOrderVC.swift; sourceTree = "<group>"; };
+		40E65F2F277B88C200113A2F /* RepairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairVC.swift; sourceTree = "<group>"; };
 		40FEFCFC276A874300D1E6AF /* MaintenceDocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaintenceDocker.entitlements; sourceTree = "<group>"; };
 		40FEFCFD276A87BA00D1E6AF /* PushNotificatonSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificatonSender.swift; sourceTree = "<group>"; };
 		40FEFCFF276A919100D1E6AF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -279,6 +291,9 @@
 				402D532027614A930073CBA1 /* MyCartVC.swift */,
 				402D532227614AA20073CBA1 /* SettingVC.swift */,
 				402D532A276160170073CBA1 /* ProductVC.swift */,
+				40E65F2F277B88C200113A2F /* RepairVC.swift */,
+				403BA2452784AE4A00EBB827 /* MapVC.swift */,
+				403BA2492784E54400EBB827 /* RepairRequestVC.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -301,6 +316,7 @@
 				4084ED282761EB100092011F /* AdminProfileVC.swift */,
 				4084ED2A2761EB4F0092011F /* AdminNotificationVC.swift */,
 				4037F7F127708A24000F69B1 /* OneOrderVC.swift */,
+				40E57F73277BB23400083455 /* RepairOrderVC.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -331,6 +347,7 @@
 				4028663627618A5500DD1D10 /* NotificationCell.swift */,
 				4071706D2762058A0014F5B2 /* AddImageCell.swift */,
 				4037F7F527708B63000F69B1 /* OrderCell.swift */,
+				403BA2472784E48E00EBB827 /* RepairOrderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -344,6 +361,7 @@
 				402A2A7C2766A00C00CA5B8B /* CartModel.swift */,
 				4037DD5F276C9140003901C7 /* NotificationModel.swift */,
 				4037F7F727708D45000F69B1 /* OrderModel.swift */,
+				40E57F71277BA41D00083455 /* RepairOrderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,6 +494,7 @@
 				40CF9849275FDD7B005BFB1C /* Frameworks */,
 				40CF984A275FDD7B005BFB1C /* Resources */,
 				7078C713113C8489696D7BD4 /* [CP] Embed Pods Frameworks */,
+				9F8FE05DC76291506E2A1DF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -602,6 +621,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9F8FE05DC76291506E2A1DF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MaintenceDocker/Pods-MaintenceDocker-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MaintenceDocker/Pods-MaintenceDocker-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MaintenceDocker/Pods-MaintenceDocker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -616,6 +652,7 @@
 				402A2A6D2766670300CA5B8B /* ImageSlideshow.swift in Sources */,
 				4028663A27618E4100DD1D10 /* ProfileVC.swift in Sources */,
 				402A2A6F2766670300CA5B8B /* PageIndicator.swift in Sources */,
+				403BA24A2784E54400EBB827 /* RepairRequestVC.swift in Sources */,
 				402A2A692766670300CA5B8B /* PageIndicatorPosition.swift in Sources */,
 				4028663E27618E7B00DD1D10 /* TermsVC.swift in Sources */,
 				4028663527617A9400DD1D10 /* CartCell.swift in Sources */,
@@ -631,11 +668,13 @@
 				402A2A6C2766670300CA5B8B /* UIImage+AspectFit.swift in Sources */,
 				402A2A6E2766670300CA5B8B /* UIImageView+Tools.swift in Sources */,
 				40FEFD00276A919100D1E6AF /* UIImage+Extension.swift in Sources */,
+				403BA2462784AE4A00EBB827 /* MapVC.swift in Sources */,
 				40B0EF47275FE12000E7D8FA /* UIView+Extension.swift in Sources */,
 				402A2A6A2766670300CA5B8B /* ActivityIndicator.swift in Sources */,
 				4037F7F227708A24000F69B1 /* OneOrderVC.swift in Sources */,
 				402A2A6B2766670300CA5B8B /* ZoomAnimatedTransitioning.swift in Sources */,
 				40CF9850275FDD7B005BFB1C /* AppDelegate.swift in Sources */,
+				40E65F30277B88C200113A2F /* RepairVC.swift in Sources */,
 				4084ED232761EAC30092011F /* PostVC.swift in Sources */,
 				40605E0E276144B300F16F38 /* HomeVC.swift in Sources */,
 				402A2A7D2766A00D00CA5B8B /* CartModel.swift in Sources */,
@@ -651,8 +690,10 @@
 				40874BB12765D8AC00C41933 /* DynamicHeightCollectionView.swift in Sources */,
 				40B0EF532760025B00E7D8FA /* UITextField+Extension.swift in Sources */,
 				4037DD60276C9140003901C7 /* NotificationModel.swift in Sources */,
+				40E57F72277BA41D00083455 /* RepairOrderModel.swift in Sources */,
 				402A2A5C276666DE00CA5B8B /* AlamofireSource.swift in Sources */,
 				4084ED2B2761EB4F0092011F /* AdminNotificationVC.swift in Sources */,
+				40E57F74277BB23400083455 /* RepairOrderVC.swift in Sources */,
 				402A2A702766670300CA5B8B /* ImageSlideshowItem.swift in Sources */,
 				4071706E2762058A0014F5B2 /* AddImageCell.swift in Sources */,
 				402A2A722766670300CA5B8B /* SwiftSupport.swift in Sources */,
@@ -662,6 +703,7 @@
 				405E9B0E27640D8E000CDDBF /* ProductModel.swift in Sources */,
 				40B0EF41275FE10C00E7D8FA /* Formater.swift in Sources */,
 				40B0EF4D275FFD0900E7D8FA /* Constant.swift in Sources */,
+				403BA2482784E48E00EBB827 /* RepairOrderCell.swift in Sources */,
 				40151C36276208360006F522 /* PostItemImageModel.swift in Sources */,
 				40FEFCFE276A87BA00D1E6AF /* PushNotificatonSender.swift in Sources */,
 				4037F7F827708D45000F69B1 /* OrderModel.swift in Sources */,
@@ -728,6 +770,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -821,6 +864,7 @@
 				INFOPLIST_FILE = MaintenceDocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Maintenance Doctor";
 				INFOPLIST_KEY_NSCameraUsageDescription = "MaintenceDocker use camera for profile photo.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app accesses your location to request the reparing service";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MaintenceDocker use photo for profile photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -855,6 +899,7 @@
 				INFOPLIST_FILE = MaintenceDocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Maintenance Doctor";
 				INFOPLIST_KEY_NSCameraUsageDescription = "MaintenceDocker use camera for profile photo.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app accesses your location to request the reparing service";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MaintenceDocker use photo for profile photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

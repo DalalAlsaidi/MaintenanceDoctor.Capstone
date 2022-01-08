@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (5.4.4)
+  - GoogleMaps (6.0.1):
+    - GoogleMaps/Maps (= 6.0.1)
+  - GoogleMaps/Base (6.0.1)
+  - GoogleMaps/Maps (6.0.1):
+    - GoogleMaps/Base
   - IQKeyboardManagerSwift (6.5.9)
   - MBProgressHUD (1.2.0)
   - SwiftMessages (9.0.5):
@@ -11,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - GoogleMaps (= 6.0.1)
   - IQKeyboardManagerSwift
   - MBProgressHUD
   - SwiftMessages
@@ -21,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleMaps
     - IQKeyboardManagerSwift
     - MBProgressHUD
     - SwiftMessages
@@ -30,6 +37,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  GoogleMaps: c213fc2334b7374144cede914da779b99be0ab74
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SwiftMessages: 9cca50659fa22bb523b4dd2a958d4442e843a354
@@ -37,6 +45,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: b41c6b8ea9b91e34dc3ca4ffdf061ff95fc5dc2a
+PODFILE CHECKSUM: 83626bf2e08d1879bfed592117c1fb499c5b1d58
 
 COCOAPODS: 1.11.2

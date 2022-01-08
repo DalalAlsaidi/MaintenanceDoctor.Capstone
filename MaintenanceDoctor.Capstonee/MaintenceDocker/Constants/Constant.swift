@@ -109,6 +109,9 @@ class Constant {
     static let PRODUCT_IMAGE            = "image"
     static let PRODUCT_quantity         = "quantity"
     static let CART_PRODUCT_ID          = "product_id"
+    static let MY_LAT                   = "latitude"
+    static let MY_LONG                  = "longitude"
+    static let ORDER_STATUS             = "order_status"
     
     //Notification Contants
     static let NOTI_ID                  = "id"

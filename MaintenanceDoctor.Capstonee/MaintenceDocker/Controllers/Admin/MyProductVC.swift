@@ -5,12 +5,9 @@
 //  Created by Dalal AlSaidi on 2021/12/8.
 //
 
-
-
 import UIKit
 import MBProgressHUD
 
-     
 class MyProductVC: BaseViewController {
 
     @IBOutlet weak var productCollectionView: UICollectionView!
@@ -38,10 +35,20 @@ class MyProductVC: BaseViewController {
     }
     
     @objc func setBadgeCount() {
-        if UIApplication.shared.applicationIconBadgeNumber <= 0 {
-            self.tabBarController?.tabBar.items![3].badgeValue = nil
-        } else {
-            self.tabBarController?.tabBar.items![3].badgeValue = "\(UIApplication.shared.applicationIconBadgeNumber)"
+        FirebaseAPI.getAdminNotification(g_user.id) { (isSucess, result) in
+            if isSucess {
+                var notificationData = [NotificationModel]()
+                notificationData = result as! [NotificationModel]
+                let badgeCount = notificationData.count
+                if badgeCount <= 0 {
+                    self.tabBarController?.tabBar.items![3].badgeValue = nil
+                } else {
+                    self.tabBarController?.tabBar.items![3].badgeValue = "\(badgeCount)"
+                }
+            } else {
+                let msg = result as! String
+                print(msg)
+            }
         }
     }
     

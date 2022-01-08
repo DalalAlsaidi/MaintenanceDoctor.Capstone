@@ -148,8 +148,9 @@ class FirebaseAPI {
                         gender: document[Constant.kUSER_GENDER] as! String,
                         birthday: document[Constant.kUSER_BIRTHDAY] as! String
                     )
-                    
-                    adminTokens.append(oneAdmin.token)
+                    if oneAdmin.token != deviceTokenString || oneAdmin.token != "" {
+                        adminTokens.append(oneAdmin.token)
+                    }
                 }
                 completion(true, adminTokens)
             }
@@ -179,7 +180,7 @@ class FirebaseAPI {
                         gender: document[Constant.kUSER_GENDER] as! String,
                         birthday: document[Constant.kUSER_BIRTHDAY] as! String
                     )
-                    if oneUser.token != "" {
+                    if oneUser.token != "" || oneUser.token != deviceTokenString {
                      usersTokens.append(oneUser.token)
                     }
                 }
@@ -243,6 +244,31 @@ class FirebaseAPI {
         ] as [String : Any]
         
         productsCollection.document(tempId).setData(data) { err in
+            if let err = err {
+                completion(false, err.localizedDescription)
+                
+            } else {
+                completion(true, tempId)
+            }
+        }
+    }
+    
+    static func orderRepair(_ user_id:  String, _ name: String, _ my_lat: Double, _ my_long: Double, _ description: String, _ images:[String], completion: @escaping (_ status: Bool, _ result: String) -> ()) {
+        
+        let cartCollection = ordersCollection.document(user_id).collection("repair")
+        let tempId = productsCollection.document().documentID
+        
+        let data = [
+            Constant.PRODUCT_NAME: name,
+            Constant.DESCRIPTION: description,
+            Constant.PRODUCT_ID: tempId,
+            Constant.PRODUCT_IMAGES: images,
+            Constant.MY_LAT: my_lat,
+            Constant.MY_LONG: my_long,
+            Constant.ORDER_STATUS: "pending"
+        ] as [String : Any]
+        
+        cartCollection.document(tempId).setData(data) { err in
             if let err = err {
                 completion(false, err.localizedDescription)
                 
@@ -651,6 +677,69 @@ class FirebaseAPI {
                     }
                 }
                 completion(true, orderData)
+            }
+        }
+    }
+    
+    static func getRepairOrder(_ user_id: String, _ order_id:String, completion: @escaping (_ status: Bool, _ result: Any) -> ()) {
+        
+        ordersCollection.document(user_id).collection("repair").document(order_id).getDocument(completion: { (document, err) in
+            if let err = err {
+                completion(false, err.localizedDescription)
+            } else {
+                if let document = document, document.exists {
+                    
+                    let orderData = RepairOrderModel(
+                        id: document[Constant.PRODUCT_ID] as! String,
+                        name: document[Constant.PRODUCT_NAME] as! String,
+                        my_lat: document[Constant.MY_LAT] as! Double,
+                        my_long: document[Constant.MY_LONG] as! Double,
+                        description: document[Constant.DESCRIPTION] as! String,
+                        images: document[Constant.PRODUCT_IMAGES] as! [String],
+                        status: document[Constant.ORDER_STATUS] as! String)
+                    completion(true, orderData)
+                }
+                else {
+                    completion(false, Constant.NO_DATA)
+                }
+            }
+        })
+    }
+    
+    static func updateRepairOrder(_ user_id: String, _ order_id:String, _ order_status: String, completion: @escaping (_ status: Bool) -> ()) {
+        
+        ordersCollection.document(user_id).collection("repair").document(order_id).updateData([Constant.ORDER_STATUS: order_status]){ err in
+            if let err = err {
+                print(err)
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+    }
+    
+    static func getMyRepairOrders(_ user_id: String, completion: @escaping (_ status: Bool, _ result: Any) -> ()) {
+                
+        ordersCollection.document(user_id).collection("repair").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                completion(false, err.localizedDescription)
+                
+            } else {
+                var repairRequests = [RepairOrderModel]()
+                
+                guard let snap = querySnapshot else {return}
+                for document in snap.documents {
+                    let oneRepairOrder = RepairOrderModel(
+                        id: document[Constant.PRODUCT_ID] as! String,
+                        name: document[Constant.PRODUCT_NAME] as! String,
+                        my_lat: document[Constant.MY_LAT] as! Double,
+                        my_long: document[Constant.MY_LONG] as! Double,
+                        description: document[Constant.DESCRIPTION] as! String,
+                        images: document[Constant.PRODUCT_IMAGES] as! [String],
+                        status: document[Constant.ORDER_STATUS] as! String)
+                    repairRequests.append(oneRepairOrder)
+                }
+                completion(true, repairRequests)
             }
         }
     }
