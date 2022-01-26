@@ -2,7 +2,7 @@
 
 # Capstone Project
 
-Maintenance Doctor Store 
+Maintenance Doctor App. 
 
 ### Description :
 Maintenance Doctor Store , is an app to provide maintenance services for phones, tablets and computers. Also it's app provides a collection of accessories for selling.
