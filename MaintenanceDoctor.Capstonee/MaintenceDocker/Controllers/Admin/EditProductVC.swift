@@ -33,7 +33,7 @@ class EditProductVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Edit Product"
+        self.title = "Edit Product".localized
         imageCollectionView.dataSource = self
         imageCollectionView.delegate = self
         loadData()

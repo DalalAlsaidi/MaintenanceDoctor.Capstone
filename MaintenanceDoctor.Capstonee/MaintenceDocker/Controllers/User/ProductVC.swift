@@ -49,7 +49,7 @@ class ProductVC: BaseViewController {
                 productData = result as! ProductModel
                 self.title = productData.name
                 nameLabel.text = productData.name
-                priceLabel.text = "$" + productData.price
+                priceLabel.text = "SR".localized + productData.price
                 descriptionLabel.text = productData.description
                 imageData = productData.images
                 setSlideShow()
@@ -94,7 +94,7 @@ class ProductVC: BaseViewController {
         quantity -= 1
         if quantity <= 0 {
             quantity = 0
-            showToast("You must add more than 1 product")
+            showToast("You must add more than 1 product".localized)
         } else {
             quantityLabel.text = "\(quantity)"
         }
@@ -102,7 +102,7 @@ class ProductVC: BaseViewController {
     
     @IBAction func onClickPhone(_ sender: Any) {
         
-        let urlWhats = "whatsapp://send?phone=+19293564362"
+        let urlWhats = "whatsapp://send?phone=+966598992448"
         
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
             if let whatsappURL = NSURL(string: urlString) {
@@ -110,14 +110,14 @@ class ProductVC: BaseViewController {
                     UIApplication.shared.open(whatsappURL as URL, options: [:], completionHandler: { (Bool) in
                     })
                 } else {
-                    showAlertDialog(title: "", message: "Please install WhatsApp", positive: "Ok", negative: nil)
+                    showAlertDialog(title: "", message: "Please install WhatsApp".localized, positive: "Ok".localized, negative: nil)
                 }
             }
         }
     }
     
     @IBAction func onClickEmail(_ sender: Any) {
-        if let url = URL(string: "mailto:admin@user.com") {
+        if let url = URL(string: "mailto:Maintenance.d.hail@gmail.com") {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url)
             } else {
@@ -129,7 +129,7 @@ class ProductVC: BaseViewController {
     @IBAction func onClickOrder(_ sender: Any) {
         
         if quantity == 0 {
-            showToast("You must add more than 1 product")
+            showToast("You must add more than 1 product".localized)
             return
         }
         
@@ -141,7 +141,7 @@ class ProductVC: BaseViewController {
         FirebaseAPI.addCart(user_id, product_id, productData.name, productData.price, quantity, imageData[0]) { (isSuccess, result) in
             self.hud.hide(animated: true)
             if isSuccess {
-                self.showToast("This product added your cart successfully.")
+                self.showToast("This product added your cart successfully.".localized)
             } else {
                 self.hud.hide(animated: true)
             }

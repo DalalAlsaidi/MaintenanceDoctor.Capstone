@@ -38,7 +38,7 @@ class SettingVC: BaseViewController {
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             self.present(activityVC, animated: true, completion: nil)
         }else  {
-            showToast("Something went wrong.")
+            showToast("Something went wrong.".localized)
         }
     }
     

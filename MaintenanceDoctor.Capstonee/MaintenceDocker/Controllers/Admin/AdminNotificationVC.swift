@@ -61,7 +61,7 @@ extension AdminNotificationVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = notificationTableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
         cell.entity = notificationData[indexPath.row]
-        cell.titleLabel.text = "New Order"
+        cell.titleLabel.text = "New Order".localized
         
         return cell
     }

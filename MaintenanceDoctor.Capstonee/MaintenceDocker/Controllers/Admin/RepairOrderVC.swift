@@ -112,12 +112,12 @@ class RepairOrderVC: BaseViewController {
     }
     
     @IBAction func onClickReject(_ sender: Any) {
-        order_status = "reject"
+        order_status = "reject".localized
         deleteNotification()
     }
     
     @IBAction func onClickAccept(_ sender: Any) {
-        order_status = "accept"
+        order_status = "accept".localized
         deleteNotification()
     }
     
@@ -144,9 +144,9 @@ class RepairOrderVC: BaseViewController {
         FirebaseAPI.updateRepairOrder(sender, order_id, order_status) { (isSucess) in
             if isSucess {
                 if self.order_status == "accept" {
-                    self.showAlert(title: "", message: "You have accepted this order", positive: "Ok", negative: nil, okClosure: self.onBackNotificationVC)
+                    self.showAlert(title: "", message: "You have accepted this order".localized, positive: "Ok".localized, negative: nil, okClosure: self.onBackNotificationVC)
                 } else {
-                        self.showAlert(title: "", message: "You have rejected this order", positive: "Ok", negative: nil, okClosure: self.onBackNotificationVC)
+                    self.showAlert(title: "", message: "You have rejected this order".localized, positive: "Ok".localized, negative: nil, okClosure: self.onBackNotificationVC)
                 }
             } else {
                 print("failed")

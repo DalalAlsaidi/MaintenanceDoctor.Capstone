@@ -18,11 +18,11 @@ extension Notification.Name {
 
 class Constant {
 
-    static let APPNAME                              = "Maintenance Doctor"
-    static let OK                                   = "OK"
-    static let CANCEL                               = "Cancel"
-    static let NO                                   = "No"
-    static let YES                                  = "Yes"
+    static let APPNAME                              = "Maintenance Doctor".localized
+    static let OK                                   = "OK".localized
+    static let CANCEL                               = "Cancel".localized
+    static let NO                                   = "No".localized
+    static let YES                                  = "Yes".localized
     
     static let FCM_KEY = "AAAA4nWhHNg:APA91bFqLsdtxdtY5LOeWadRsG9Q8vreZolSi6XaZvDKU4nmrQLEvJmV0ZsGirUYImvSpyy2DBYp_f3v8fRM8EMuuIjeHqM_WlZIwjvZRVYMSUPGZi_38XNRJt2Ed2qTiQ4jXYQWbqO4"
     
@@ -31,21 +31,21 @@ class Constant {
     static let AVATAR_IMAGE                         = UIImage(named: "profile")
     
     //error messages
-    static let CHECK_USER_NAME_EMPTY                = "Please enter user name"
-    static let CHECK_EMAIL_EMPTY                    = "Please enter your email address"
-    static let CHECK_VAILD_EMAIL                    = "Please enter valid email"
-    static let CHECK_PHONE_NUMBER_EMPTY             = "Please enter your phone number"
-    static let CHECK_PASSWORD_EMPTY                 = "Please enter password"
-    static let CONFIRM_PASSWORD_EMPTY               = "Please confirm your password"
-    static let WRONG_PASSWORD                       = "Password is not matched."
-    static let CHECK_TERMS                          = "Please check terms and privacy policy"
-    static let CHECK_FORGOT                         = "Please enter phone number or email"
+    static let CHECK_USER_NAME_EMPTY                = "Please enter user name".localized
+    static let CHECK_EMAIL_EMPTY                    = "Please enter your email address".localized
+    static let CHECK_VAILD_EMAIL                    = "Please enter valid email".localized
+    static let CHECK_PHONE_NUMBER_EMPTY             = "Please enter your phone number".localized
+    static let CHECK_PASSWORD_EMPTY                 = "Please enter password".localized
+    static let CONFIRM_PASSWORD_EMPTY               = "Please confirm your password".localized
+    static let WRONG_PASSWORD                       = "Password is not matched.".localized
+    static let CHECK_TERMS                          = "Please check terms and privacy policy".localized
+    static let CHECK_FORGOT                         = "Please enter phone number or email".localized
 
-    static let WARNING                              = "Warning!"
-    static let MSG_SUCCESS                          = "Success"
-    static let MSG_FAIL                             = "Fail"
-    static let ERROR_CONNECT                        = "The connection to the server failed"
-    static let MSG_SOMETHING_WRONG                  = "Something went wrong"
+    static let WARNING                              = "Warning!".localized
+    static let MSG_SUCCESS                          = "Success".localized
+    static let MSG_FAIL                             = "Fail".localized
+    static let ERROR_CONNECT                        = "The connection to the server failed".localized
+    static let MSG_SOMETHING_WRONG                  = "Something went wrong".localized
   
     
     // Request Params
@@ -61,12 +61,12 @@ class Constant {
    
     
     //Logout
-    static let CONFIRM_LOGOUT                       = "Are you sure logout?"
+    static let CONFIRM_LOGOUT                       = "Are you sure logout?".localized
     
     
-    static let CHECK_CURRENT_PASSWORD_EMPTY         = "Please enter current password"
-    static let CHECK_NEW_PASSWORD_EMPTY             = "Please enter new password"
-    static let WRONG_CURRENT_PASSWORD               = "Current Password is not correct"
+    static let CHECK_CURRENT_PASSWORD_EMPTY         = "Please enter current password".localized
+    static let CHECK_NEW_PASSWORD_EMPTY             = "Please enter new password".localized
+    static let WRONG_CURRENT_PASSWORD               = "Current Password is not correct".localized
     
     static let NO_DATA = "No Data"
     

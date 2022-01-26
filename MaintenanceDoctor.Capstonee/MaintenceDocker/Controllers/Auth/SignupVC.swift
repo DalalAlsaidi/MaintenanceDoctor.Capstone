@@ -108,7 +108,7 @@ class SignupVC: BaseViewController {
 
                 guard let authResult = authResult else {
                     self.hud.hide(animated: true)
-                    self.showError("Something's wrong")
+                    self.showError("Something's wrong".localized)
                     return
                 }
                 let user = authResult.user
@@ -130,7 +130,7 @@ class SignupVC: BaseViewController {
                         self.saveUserInfo(user, userID, data)
                     } else {
                         self.hud.hide(animated: true)
-                        self.showToast("Authentication failed.")
+                        self.showToast("Authentication failed.".localized)
                     }
                 }
             }
@@ -165,10 +165,10 @@ class SignupVC: BaseViewController {
                         self.hud.hide(animated: true)
                         
                         if err != nil {
-                            self.showError("Sothing's wrong")
+                            self.showError("Something's wrong".localized)
                             
                         } else {
-                            self.showError("Please verify with your email")
+                            self.showError("Please verify with your email".localized)
                             self.navigationController?.popViewController(animated: true)
                         }
                     }
@@ -182,26 +182,26 @@ class SignupVC: BaseViewController {
     
     @IBAction func onClickAvatar(_ sender: Any) {
         
-        let actionSheet = UIAlertController(title: "Please select the place", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Please select the place".localized, message: nil, preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            actionSheet.addAction(UIAlertAction(title: "From Camera", style: .default, handler: { (action) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "From Camera".localized, style: .default, handler: { (action) -> Void in
                 
                 self.picker.sourceType = .camera
                 self.picker.modalPresentationStyle = .fullScreen
                 self.present(self.picker, animated: true, completion: nil)
             }))
         } else {
-            showAlertDialog(title: "The camera is not available.", message: "", positive: "", negative: "Cancel")
+            showAlertDialog(title: "The camera is not available.".localized, message: "", positive: "", negative: "Cancel".localized)
             print("Camera not available")
         }
         
-        actionSheet.addAction(UIAlertAction(title: "From Gallery", style: .default, handler: { (action) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "From Gallery".localized, style: .default, handler: { (action) -> Void in
             self.picker.sourceType = .photoLibrary
             self.present(self.picker, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
     

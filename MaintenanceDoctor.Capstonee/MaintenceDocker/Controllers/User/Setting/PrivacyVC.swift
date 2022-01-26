@@ -21,7 +21,7 @@ class PrivacyVC: BaseViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Privacy Policy"
+        self.title = "Privacy Policy".localized
         coverView.isHidden = false
         indicator.startAnimating()
         privacyWebView.navigationDelegate = self

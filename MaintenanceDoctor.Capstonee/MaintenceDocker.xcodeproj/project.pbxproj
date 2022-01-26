@@ -97,6 +97,8 @@
 		40FEFCFE276A87BA00D1E6AF /* PushNotificatonSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FEFCFD276A87BA00D1E6AF /* PushNotificatonSender.swift */; };
 		40FEFD00276A919100D1E6AF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FEFCFF276A919100D1E6AF /* UIImage+Extension.swift */; };
 		4466BA82CC0123C0E3B41336 /* Pods_MaintenceDocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54E53D06C6619291C5F1510 /* Pods_MaintenceDocker.framework */; };
+		9FFA68B9279B4CD000340D3F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FFA68BB279B4CD000340D3F /* Localizable.strings */; };
+		9FFA68BD279B4D8900340D3F /* Loclaization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA68BC279B4D8900340D3F /* Loclaization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +175,10 @@
 		40FEFCFD276A87BA00D1E6AF /* PushNotificatonSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificatonSender.swift; sourceTree = "<group>"; };
 		40FEFCFF276A919100D1E6AF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		4CBB7C2BFD627AE26EDE278C /* Pods-MaintenceDocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintenceDocker.release.xcconfig"; path = "Target Support Files/Pods-MaintenceDocker/Pods-MaintenceDocker.release.xcconfig"; sourceTree = "<group>"; };
+		9FFA68B5279B4C8700340D3F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		9FFA68B6279B4C8800340D3F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9FFA68BA279B4CD000340D3F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9FFA68BC279B4D8900340D3F /* Loclaization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loclaization.swift; sourceTree = "<group>"; };
 		D54E53D06C6619291C5F1510 /* Pods_MaintenceDocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaintenceDocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E090F9B815B6D2A79B0C0D9A /* Pods-MaintenceDocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintenceDocker.debug.xcconfig"; path = "Target Support Files/Pods-MaintenceDocker/Pods-MaintenceDocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -395,6 +401,7 @@
 				40B0EF3E275FE10C00E7D8FA /* Formater.swift */,
 				40B0EF3C275FE10C00E7D8FA /* String+Extention.swift */,
 				40FEFCFF276A919100D1E6AF /* UIImage+Extension.swift */,
+				9FFA68BC279B4D8900340D3F /* Loclaization.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -461,6 +468,7 @@
 				40B0EF33275FDF2300E7D8FA /* Base */,
 				4067DEB927646804004B2738 /* Vendor */,
 				40CF985D275FDD7D005BFB1C /* Info.plist */,
+				9FFA68BB279B4CD000340D3F /* Localizable.strings */,
 			);
 			path = MaintenceDocker;
 			sourceTree = "<group>";
@@ -549,6 +557,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 40CF9843275FDD7B005BFB1C;
 			packageReferences = (
@@ -573,6 +582,7 @@
 				402A2A762766671900CA5B8B /* ic_cross_white@3x.png in Resources */,
 				40CF985C275FDD7D005BFB1C /* LaunchScreen.storyboard in Resources */,
 				405E9B0C2763F3BD000CDDBF /* GoogleService-Info.plist in Resources */,
+				9FFA68B9279B4CD000340D3F /* Localizable.strings in Resources */,
 				40CF9859275FDD7D005BFB1C /* Assets.xcassets in Resources */,
 				40CF9857275FDD7B005BFB1C /* Main.storyboard in Resources */,
 				402A2A752766671900CA5B8B /* ic_cross_white@2x.png in Resources */,
@@ -667,6 +677,7 @@
 				402A2A682766670300CA5B8B /* FullScreenSlideshowViewController.swift in Sources */,
 				402A2A6C2766670300CA5B8B /* UIImage+AspectFit.swift in Sources */,
 				402A2A6E2766670300CA5B8B /* UIImageView+Tools.swift in Sources */,
+				9FFA68BD279B4D8900340D3F /* Loclaization.swift in Sources */,
 				40FEFD00276A919100D1E6AF /* UIImage+Extension.swift in Sources */,
 				403BA2462784AE4A00EBB827 /* MapVC.swift in Sources */,
 				40B0EF47275FE12000E7D8FA /* UIView+Extension.swift in Sources */,
@@ -718,6 +729,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				40CF9856275FDD7B005BFB1C /* Base */,
+				9FFA68B5279B4C8700340D3F /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -726,8 +738,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				40CF985B275FDD7D005BFB1C /* Base */,
+				9FFA68B6279B4C8800340D3F /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9FFA68BB279B4CD000340D3F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FFA68BA279B4CD000340D3F /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -737,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -799,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

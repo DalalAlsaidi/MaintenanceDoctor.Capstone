@@ -67,7 +67,7 @@ extension NotificaitonVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = notificationTableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
         cell.entity = notificationData[indexPath.row]
-        cell.titleLabel.text = "New Product Post"
+        cell.titleLabel.text = "New Product Post".localized
         
         return cell
     }

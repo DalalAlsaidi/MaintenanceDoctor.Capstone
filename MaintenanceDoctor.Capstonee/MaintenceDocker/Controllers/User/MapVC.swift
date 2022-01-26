@@ -18,7 +18,7 @@ class MapVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Map"
+        self.title = "Map".localized
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         mapView.delegate = self
@@ -33,7 +33,7 @@ class MapVC: BaseViewController {
     
     @IBAction func onClickOK(_ sender: Any) {
         if my_address.isEmpty {
-            showToast("Please select your location")
+            showToast("Please select your location".localized)
             return
         }
         doDismiss()

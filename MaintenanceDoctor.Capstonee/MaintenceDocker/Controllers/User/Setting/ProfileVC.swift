@@ -41,7 +41,7 @@ class ProfileVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Profile"
+        self.title = "Profile".localized
         self.picker.delegate = self
         picker.allowsEditing = true
         picker.modalPresentationStyle = .fullScreen
@@ -62,26 +62,26 @@ class ProfileVC: BaseViewController {
     
     @IBAction func onClickAvatar(_ sender: Any) {
         
-        let actionSheet = UIAlertController(title: "Please select the place", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Please select the place".localized, message: nil, preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            actionSheet.addAction(UIAlertAction(title: "From Camera", style: .default, handler: { (action) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "From Camera".localized, style: .default, handler: { (action) -> Void in
                 
                 self.picker.sourceType = .camera
                 self.picker.modalPresentationStyle = .fullScreen
                 self.present(self.picker, animated: true, completion: nil)
             }))
         } else {
-            showAlertDialog(title: "The camera is not available.", message: "", positive: "", negative: "Cancel")
+            showAlertDialog(title: "The camera is not available.".localized, message: "", positive: "", negative: "Cancel".localized)
             print("Camera not available")
         }
         
-        actionSheet.addAction(UIAlertAction(title: "From Gallery", style: .default, handler: { (action) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "From Gallery".localized, style: .default, handler: { (action) -> Void in
             self.picker.sourceType = .photoLibrary
             self.present(self.picker, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
     
@@ -95,18 +95,18 @@ class ProfileVC: BaseViewController {
     @objc func timePickerValueChanged(_ sender:UIDatePicker){
       
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy".localized
         birthdayTextField.text = dateFormatter.string(from: sender.date)
     }
     
     @IBAction func onClickChangePassword(_ sender: Any) {
-        let changePasswordAlert = UIAlertController(title: "Change Password", message: "Please check the inbox or junk of your email to receive the link to reset your password", preferredStyle: .alert)
+        let changePasswordAlert = UIAlertController(title: "Change Password".localized, message: "Please check the inbox or junk of your email to receive the link to reset your password".localized, preferredStyle: .alert)
 
         changePasswordAlert.addTextField { (textField: UITextField) in
-            textField.placeholder = "Enter Your Email"
+            textField.placeholder = "Enter Your Email".localized
         }
 
-        let changePasswordAction = UIAlertAction(title: "Change", style: .default, handler: { (action) -> Void in
+        let changePasswordAction = UIAlertAction(title: "Change".localized, style: .default, handler: { (action) -> Void in
             // Get TextFields text
             let emaiTextField         = changePasswordAlert.textFields![0]
 
@@ -118,14 +118,14 @@ class ProfileVC: BaseViewController {
                         self.showError((error?.localizedDescription)!)
                     } else {
                         
-                        self.showError("Password reset email sent.")
+                        self.showError("Password reset email sent.".localized)
                     }
                 })
                 changePasswordAlert.dismiss(animated: false, completion: nil)
             }
         })
         // Cancel button
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: {(action) -> Void in
             print("Cancelled")
             changePasswordAlert.dismiss(animated: false, completion: nil)
         })
@@ -198,7 +198,7 @@ class ProfileVC: BaseViewController {
                 self.updateUserInfo(uID, downloadUrl!, data)
             } else {
                 self.hud.hide(animated: true)
-                self.showToast("Profile Update failed")
+                self.showToast("Profile Update failed".localized)
             }
         }
     }
@@ -216,9 +216,9 @@ class ProfileVC: BaseViewController {
                     userType: "admin",
                     gender: self.gender,
                     birthday: self.birthday)
-                self.showToast("Profile updated successfully")
+                self.showToast("Profile updated successfully".localized)
             } else {
-                self.showToast("Profile update failed")
+                self.showToast("Profile update failed".localized)
             }
             self.hud.hide(animated: true)
         }

@@ -65,26 +65,26 @@ class PostVC: BaseViewController {
     @IBAction func addImages(_ sender: UIButton) {
         
         addImageStatus = sender.tag        
-        let actionSheet = UIAlertController(title: "Please select the place", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Please select the place".localized, message: nil, preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            actionSheet.addAction(UIAlertAction(title: "From Camera", style: .default, handler: { (action) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "From Camera".localized, style: .default, handler: { (action) -> Void in
                 
                 self.picker.sourceType = .camera
                 self.picker.modalPresentationStyle = .fullScreen
                 self.present(self.picker, animated: true, completion: nil)
             }))
         } else {
-            showAlertDialog(title: "The camera is not available.", message: "", positive: "", negative: "Cancel")
+            showAlertDialog(title: "The camera is not available.".localized, message: "", positive: "", negative: "Cancel".localized)
             print("Camera not available")
         }
         
-        actionSheet.addAction(UIAlertAction(title: "From Gallery", style: .default, handler: { (action) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "From Gallery".localized, style: .default, handler: { (action) -> Void in
             self.picker.sourceType = .photoLibrary
             self.present(self.picker, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
     
@@ -119,7 +119,7 @@ class PostVC: BaseViewController {
                     self.uploadIamges(forIndex: index + 1)
                 } else {
                     self.hud.hide(animated: true)
-                    self.showToast("Upload failed.")
+                    self.showToast("Upload failed.".localized)
                 }
             }
             return
@@ -130,7 +130,7 @@ class PostVC: BaseViewController {
                 let product_id = result
                 self.hud.hide(animated: true)
                 self.sendPostNotification(product_id)
-                self.showToast("Your product uploaded successfully.")
+                self.showToast("Your product uploaded successfully.".localized)
             } else {
                 self.hud.hide(animated: true)
             }
@@ -142,7 +142,7 @@ class PostVC: BaseViewController {
             if isSuccess {
                 let tokens : [String] = result as! [String]
                 let sender = PushNotificationSender()
-                sender.sendAllPushNotification(to: tokens, title: "New Product Post", body: "The seller posted \(name) for $\(price)", notiType: NotificationType.new_product.rawValue, id: product_id, image_url: imageUrls[0], orderIds: [""])
+                sender.sendAllPushNotification(to: tokens, title: "New Product Post".localized, body: "The seller posted \(name) for SR\(price)".localized, notiType: NotificationType.new_product.rawValue, id: product_id, image_url: imageUrls[0], orderIds: [""])
                 
             } else {
                 self.hud.hide(animated: true)
@@ -152,19 +152,19 @@ class PostVC: BaseViewController {
     
     func isValidate() -> Bool {
         if name.isEmpty {
-            showToast("Please enter product name")
+            showToast("Please enter product name".localized)
             return false
         }
         if price.isEmpty {
-            showToast("Please enter price.")
+            showToast("Please enter price.".localized)
             return false
         }
         if product_description.isEmpty {
-            showToast("Please enter description")
+            showToast("Please enter description".localized)
             return false
         }
         if imageData.count == 0 {
-            showToast("You must add one more image")
+            showToast("You must add one more image".localized)
             return false
         }
         return true

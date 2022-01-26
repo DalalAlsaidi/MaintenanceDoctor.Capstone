@@ -22,7 +22,7 @@ class ProductCell: UICollectionViewCell {
                 placeholder: UIImage(named: "placeholder"))
             productImageView.kf.indicatorType = .activity
             productNameLabel.text        = entity.name
-            productPriceLabel.text       = "$" + entity.price
+            productPriceLabel.text       = "SR".localized + entity.price
             productDescriptionLabel.text = entity.description
         }
     }

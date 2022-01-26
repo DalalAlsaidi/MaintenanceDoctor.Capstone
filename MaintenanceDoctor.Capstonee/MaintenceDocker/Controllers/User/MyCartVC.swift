@@ -35,7 +35,7 @@ class MyCartVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "My Cart"
+        self.title = "My Cart".localized
         cartTableView.delegate = self
         cartTableView.dataSource = self
     }
@@ -79,7 +79,7 @@ class MyCartVC: BaseViewController {
                     self.addOrder(forIndex: index + 1)
                 } else {
                     self.hud.hide(animated: true)
-                    self.showToast("Your order failed.")
+                    self.showToast("Your order failed.".localized)
                 }
             }
             return
@@ -99,11 +99,11 @@ class MyCartVC: BaseViewController {
                 self.cartTableView.reloadData()
                 cartBadge = 0
                 self.setBadge()
-                self.showAlertDialog(title: "", message: "Your Order is completed", positive: "Ok", negative: nil)
+                self.showAlertDialog(title: "", message: "Your Order is completed".localized, positive: "Ok".localized, negative: nil)
                 self.sendOrderNotification()
                 
             } else {                
-                self.showToast("Delete cart failed.")
+                self.showToast("Delete cart failed.".localized)
             }
         }
     }
@@ -113,7 +113,7 @@ class MyCartVC: BaseViewController {
             if isSuccess {
                 let tokens : [String] = result as! [String]
                 let sender = PushNotificationSender()
-                sender.sendAllPushNotification(to: tokens, title: "New Product Order", body: "\(g_user.userName) ordered the products", notiType: NotificationType.new_order.rawValue, id: self.user_id, image_url: g_user.photoUrl, orderIds: self.orderIds)                
+                sender.sendAllPushNotification(to: tokens, title: "New Product Order".localized, body: "\(g_user.userName)ordered the products".localized, notiType: NotificationType.new_order.rawValue, id: self.user_id, image_url: g_user.photoUrl, orderIds: self.orderIds)                
             } else {
                 print("Getting tokens failed")
             }
@@ -124,17 +124,17 @@ class MyCartVC: BaseViewController {
         
         selectedProduct = sender.tag
         cartData[sender.tag].quantity = String(Int(cartData[sender.tag].quantity)! + 1)
-        updateCart(cartData[sender.tag], "add")
+        updateCart(cartData[sender.tag], "add".localized)
     }
     
     @objc func onClickMinus(_ sender: UIButton) {
         
         selectedProduct = sender.tag
         if (Int(cartData[sender.tag].quantity)! - 1) == 0 {
-            showAlert(title: "Warning", message: "Do you want to remove this product from your order list?", positive: "Yes", negative: "Cancel", okClosure: removeProductFromOrder)
+            showAlert(title: "Warning".localized, message: "Do you want to remove this product from your order list?".localized, positive: "Yes".localized, negative: "Cancel".localized, okClosure: removeProductFromOrder)
         } else {
             cartData[sender.tag].quantity = String(Int(cartData[sender.tag].quantity)! - 1)
-            updateCart(cartData[sender.tag], "reduce")
+            updateCart(cartData[sender.tag], "reduce".localized)
         }
     }
     
@@ -170,7 +170,7 @@ class MyCartVC: BaseViewController {
     func updateCart(_ cart: CartModel, _ updateType: String) {
         FirebaseAPI.updateCart(user_id, cart.id, cart.quantity) { [self] (isSucess, result) in
             if isSucess {
-                if updateType == "reduce" {
+                if updateType == "reduce".localized {
                     calculateTotalPrice()
                     cartTableView.reloadData()
                 } else {
@@ -189,7 +189,7 @@ class MyCartVC: BaseViewController {
         for item in cartData {
             totalPrice += Float(item.quantity)! * Float(item.price)!
         }
-        totalPriceLabel.text = "$" + String(format: "%.2f", totalPrice)
+        totalPriceLabel.text = "SR".localized + String(format: "%.2f", totalPrice)
     }
     
 }

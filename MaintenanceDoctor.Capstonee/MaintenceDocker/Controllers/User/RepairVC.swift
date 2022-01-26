@@ -65,26 +65,26 @@ class RepairVC: BaseViewController {
     
     @IBAction func onClickUploadImage(_ sender: UIButton) {
         addImageStatus = sender.tag
-        let actionSheet = UIAlertController(title: "Please select the place", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Please select the place".localized, message: nil, preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            actionSheet.addAction(UIAlertAction(title: "From Camera", style: .default, handler: { (action) -> Void in
+            actionSheet.addAction(UIAlertAction(title: "From Camera".localized, style: .default, handler: { (action) -> Void in
                 
                 self.picker.sourceType = .camera
                 self.picker.modalPresentationStyle = .fullScreen
                 self.present(self.picker, animated: true, completion: nil)
             }))
         } else {
-            showAlertDialog(title: "The camera is not available.", message: "", positive: "", negative: "Cancel")
+            showAlertDialog(title: "The camera is not available.".localized, message: "", positive: "", negative: "Cancel".localized)
             print("Camera not available")
         }
         
-        actionSheet.addAction(UIAlertAction(title: "From Gallery", style: .default, handler: { (action) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "From Gallery".localized, style: .default, handler: { (action) -> Void in
             self.picker.sourceType = .photoLibrary
             self.present(self.picker, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
     
@@ -104,19 +104,19 @@ class RepairVC: BaseViewController {
     
     func isValidate() -> Bool {
         if name.isEmpty {
-            showToast("Please enter name")
+            showToast("Please enter repair subject".localized)
             return false
         }
         if location.isEmpty {
-            showToast("Please enter location")
+            showToast("Please enter location".localized)
             return false
         }
         if repair_description.isEmpty {
-            showToast("Please enter description")
+            showToast("Please enter description".localized)
             return false
         }
         if imageData.count == 0 {
-            showToast("You must add one more image")
+            showToast("You must add one more image".localized)
             return false
         }
         return true
@@ -134,7 +134,7 @@ class RepairVC: BaseViewController {
                     self.uploadIamges(forIndex: index + 1)
                 } else {
                     self.hud.hide(animated: true)
-                    self.showToast("Upload failed.")
+                    self.showToast("Upload failed.".localized)
                 }
             }
             return
@@ -147,7 +147,7 @@ class RepairVC: BaseViewController {
                 var temp = [String]()
                 temp.append(order_id)
                 self.sendOrderNotification(temp)
-                self.showToast("Your product uploaded successfully.")
+                self.showToast("Your order sent successfully.".localized)
             } else {
                 self.hud.hide(animated: true)
             }
@@ -159,7 +159,7 @@ class RepairVC: BaseViewController {
             if isSuccess {
                 let tokens : [String] = result as! [String]
                 let sender = PushNotificationSender()
-                sender.sendAllPushNotification(to: tokens, title: "New Maintenance Order", body: "\(g_user.userName) requested to repair \(self.name)", notiType: NotificationType.new_order.rawValue, id: g_user.id, image_url: g_user.photoUrl, orderIds: order_id)
+                sender.sendAllPushNotification(to: tokens, title: "New Maintenance Order".localized, body: "\(g_user.userName) requested to repair \(self.name)".localized, notiType: NotificationType.new_order.rawValue, id: g_user.id, image_url: g_user.photoUrl, orderIds: order_id)
                 self.setInitialStatus()
             } else {
                 print("Getting tokens failed")

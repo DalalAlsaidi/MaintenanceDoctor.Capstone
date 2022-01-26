@@ -26,8 +26,8 @@ class LoginVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.text = "dalal2alsaidi@gmail.com"
-        passwordTextField.text = "As998877"
+//        emailTextField.text = "dalal2alsaidi@gmail.com"
+//        passwordTextField.text = "As998877"
     }
 
     @IBAction func onClickLogin(_ sender: Any) {
@@ -83,9 +83,9 @@ class LoginVC: BaseViewController {
                 self.hud.hide(animated: true)
                 
                 if err != nil {
-                    self.showError("Something's wrong")
+                    self.showError("Something's wrong".localized)
                 } else {
-                    self.showError("Please verify with your email")
+                    self.showError("Please verify with your email".localized)
                 }
             }
         } else {
@@ -107,7 +107,7 @@ class LoginVC: BaseViewController {
                     } else {
                         let msg = result as! String
                         if msg == Constant.NO_DATA {
-                            self.showToast("You are not an admin")
+                            self.showToast("You are not an admin".localized)
                         } else {
                             self.showToast(msg)
                         }
@@ -128,7 +128,7 @@ class LoginVC: BaseViewController {
                     } else {
                         let msg = result as! String
                         if msg == Constant.NO_DATA {
-                            self.showToast("You are not an user")
+                            self.showToast("You are not an user".localized)
                         } else {
                             self.showToast(msg)
                         }
@@ -140,13 +140,13 @@ class LoginVC: BaseViewController {
     
     @IBAction func onClickForgotPassword(_ sender: Any) {
         
-        let changePasswordAlert = UIAlertController(title: "Forgot Password", message: "Please check the inbox or junk of your email to receive the link to reset your password", preferredStyle: .alert)
+        let changePasswordAlert = UIAlertController(title: "Forgot Password".localized, message: "Please check the inbox or junk of your email to receive the link to reset your password".localized, preferredStyle: .alert)
 
         changePasswordAlert.addTextField { (textField: UITextField) in
-            textField.placeholder = "Enter Your Email"
+            textField.placeholder = "Enter Your Email".localized
         }
 
-        let changePasswordAction = UIAlertAction(title: "Send", style: .default, handler: { (action) -> Void in
+        let changePasswordAction = UIAlertAction(title: "Send".localized, style: .default, handler: { (action) -> Void in
             // Get TextFields text
             let emaiTextField         = changePasswordAlert.textFields![0]
 
@@ -158,14 +158,14 @@ class LoginVC: BaseViewController {
                         self.showError((error?.localizedDescription)!)
                     } else {
                         
-                        self.showError("Password reset email sent.")
+                        self.showError("Password reset email sent.".localized)
                     }
                 })
                 changePasswordAlert.dismiss(animated: false, completion: nil)
             }
         })
         // Cancel button
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: {(action) -> Void in
             print("Cancelled")
             changePasswordAlert.dismiss(animated: false, completion: nil)
         })

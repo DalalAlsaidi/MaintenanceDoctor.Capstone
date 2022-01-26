@@ -26,7 +26,7 @@ class OneOrderVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New Order"
+        self.title = "New Order".localized
         orderCollectionView.dataSource = self
         orderCollectionView.delegate = self
         loadData()
@@ -48,12 +48,12 @@ class OneOrderVC: BaseViewController {
     }
     
     @IBAction func onClickAccept(_ sender: Any) {
-        order_status = "accept"
+        order_status = "accept".localized
         deleteNotification()
     }
     
     @IBAction func onClickReject(_ sender: Any) {
-        order_status = "reject"
+        order_status = "reject".localized
         deleteNotification()
     }
     
@@ -79,12 +79,12 @@ class OneOrderVC: BaseViewController {
         FirebaseAPI.deleteOrder(sender_id, orderIDs) { (isSuccess, result) in
             if isSuccess == true {
                 if self.order_status == "accept" {
-                    self.showAlert(title: "", message: "You have accepted this order", positive: "Ok", negative: nil, okClosure: self.onBackNotificationVC)
+                    self.showAlert(title: "", message: "You have accepted this order".localized, positive: "Ok".localized, negative: nil, okClosure: self.onBackNotificationVC)
                 } else {
-                    self.showAlert(title: "", message: "You have rejected this order", positive: "Ok", negative: nil, okClosure: self.onBackNotificationVC)
+                    self.showAlert(title: "", message: "You have rejected this order".localized, positive: "Ok".localized, negative: nil, okClosure: self.onBackNotificationVC)
                 }
             } else {
-                self.showToast("Delete order failed.")
+                self.showToast("Delete order failed.".localized)
             }
         }
     }

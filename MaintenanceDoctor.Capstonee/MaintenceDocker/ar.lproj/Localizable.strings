@@ -1,0 +1,107 @@
+/* 
+  Localizable.strings
+  MaintenceDocker
+
+  Created by Dalal AlSaidi on 21/01/2022.
+  
+*/
+
+
+"You are not an admin" = "أنت لست مدير";
+"You are not an user" = "أنت لست مستخدم";
+"Forgot Password" = "نسيت كلمة السر";
+"Please check the inbox or junk of your email to receive the link to reset your password" = "سيتم ارسال رسالة على بريدك الإلكتروني، اتبع الرابط لتغيير كلمة السر";
+"Enter Your Email" = "أدخل بريدك الإلكتروني ..";
+"Send" = "ارسال";
+"Password reset email sent." = "تم ارسال بريد لإعادة تعيين كلمة السر";
+"Cancel" = "إلغاء";
+"Something's wrong" = "خطأ غير معروف!";
+"Please verify with your email" = "يرجى التحقق من البريد الإلكتروني";
+"Authentication failed." = "فشل التحقق.";
+"Please select the place" = "يرجى اختيار المصدر";
+"From Camera" = "الكاميرا";
+"The camera is not available." = "الكاميرا غير متوفرة";
+"From Gallery" = "من البوم الكاميرا";
+"New Product Post" = "منتج جديد";
+"Your order failed." = "فشل الطلب";
+"Your Order is completed" = "تم إرسال الطلب بنجاح";
+"Delete cart failed." = "فشل حذف السلة";
+"Ok" = "موافق";
+"OK" = "موافق";
+"SR" = "ر.س";
+"New Product Order" = "طلب منتج جديد";
+"ordered the products" = "طلب هذي المنتجات";
+"add" = "اضافة";
+"Warning" = "تنبيه!";
+"Do you want to remove this product from your order list?" = "هل تريد حذف هذا المنتج من السلة؟";
+"Yes" = "نعم";
+"reduce" = "تقليل";
+"You must add more than 1 product" = "يجب عليك اضافة منتج واحد على الأقل!";
+"Please install WhatsApp" = "الرجاء تثبيت الواتساب!";
+"This product added your cart successfully." = "تم إضافة المنتج للسلة بنجاح";
+"Please enter repair subject" = "الرجاء ادخال موضوع المشكلة";
+"Please enter location" = "الرجاء مشاركة الموقع";
+"Please enter description" = "الرجاء ادخال الوصف!";
+"You must add one more image" = "الرجاء اضافة صورة واحدة على الأقل!";
+"Upload failed." = "فشل الرفع!";
+"Your order sent successfully." = "تم ارسال طلب الصيانة بنجاح!";
+"New Maintenance Order" = "طلب صيانة جديد";
+" requested to repair " = "ارسل طلب صيانة لـ";
+"Map" = "الخريطة";
+"Please select your location" = "الرجاء اختيار الموقع";
+"Profile" = "الملف الشخصي";
+"MM/dd/yyyy" = "سنة/يوم/شهر";
+"Change Password" = "تغيير كلمة السر";
+"Change" = "تغيير";
+"Profile Update failed" = "فشل تحديث الملف الشخصي!";
+"Profile updated successfully" = "تم تحديث الملف الشخصي بنجاح";
+"Home" = "الرئيسية";
+"Log Out" = "تسجيل الخروج";
+"You deleted your product successfully" = "تم حذف المنتج بنجاح";
+"Edit Product" = "تعديل تفاصيل المنتج";
+"Your product uploaded successfully." = "تم رفع المنتج بنجاح";
+"The seller posted  for SR" = "منتج جديد";
+"Please enter product name" = "الرجاء إدخال اسم المنتج";
+"Please enter price." = "الرجاء إدخال السعر";
+"New Order" = "طلب جديد";
+"accept" = "قبول";
+"reject" = "رفض";
+"You have accepted this order" = "تم قبول الطلب بنجاح";
+"You have rejected this order" = "تم رفض الطلب بنجاح";
+"Delete order failed." = "فشل حذف الطلب";
+"My Cart" = "سلتي";
+"Are you sure logout?" = "هل تريد تسجيل الخروج؟";
+"New_order" = "طلب جديد";
+"New_Product" = "منتج جديد";
+"Maintenance Doctor" = "دكتورة الصيانة";
+"Please enter user name" = "الرجاد ادخال اسم المستخدم";
+"Please enter your email address" = "الرجاء ادخال البريد الالكتروني";
+"Please enter valid email" = "الرجاء ادخال بريد الكتروني صحيح";
+"Please enter your phone number" = "الرجاء ادخال رقم الجوال";
+"Please enter password" = "الرجاء ادخال كلمة السر";
+"Please confirm your password" = "تأكيد كلمة السر";
+"Password is not matched." = "كلمة السر غير متطابقة!";
+"Please check terms and privacy polic" = "الرجاء قراءة خصوصية وسياسة الاستخدام";
+"Please enter phone number or email" = "الرجاء ادخال رقم جوال أو بريد الكتروني";
+"Warning!" = "تنبيه!";
+"Success" = "تم بنجاح!";
+"Fail" = "فشل";
+"The connection to the server failed" = "فشل الاتصال بالانترنت";
+"Please enter current password" = "الرجاء ادخال كلمة المرور الحالية";
+"Please enter new password" = "الرجاء ادخال كلمة سر جديدة";
+"Current Password is not correct" = "كلمة السر غير صحيحة!";
+"No" = "لا";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+
+

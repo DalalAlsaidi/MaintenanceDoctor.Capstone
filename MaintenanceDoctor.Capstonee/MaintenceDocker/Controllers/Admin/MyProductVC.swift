@@ -28,8 +28,8 @@ class MyProductVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(onClickLogout))
+        self.title = "Home".localized
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out".localized, style: .plain, target: self, action: #selector(onClickLogout))
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
     }

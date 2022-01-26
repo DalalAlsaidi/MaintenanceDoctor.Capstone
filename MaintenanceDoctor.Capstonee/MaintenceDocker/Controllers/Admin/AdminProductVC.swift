@@ -45,7 +45,7 @@ class AdminProductVC: BaseViewController {
                 productData = result as! ProductModel
                 self.title = productData.name
                 nameLabel.text = productData.name
-                priceLabel.text = "$" + productData.price
+                priceLabel.text = "SR".localized + productData.price
                 descriptionLabel.text = productData.description
                 imageData = productData.images
                 setSlideShow()
@@ -95,7 +95,7 @@ class AdminProductVC: BaseViewController {
         FirebaseAPI.deleteProduct(product_id) { (isSucess, result) in
             self.hud.hide(animated: true)
             if isSucess {
-                self.showToast("You deleted your product successfully")
+                self.showToast("You deleted your product successfully".localized)
                 self.doDismiss()
             } else {
                 let msg = result
