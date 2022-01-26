@@ -33,6 +33,12 @@ Admin:
 - In add product screen, admin can add a new product.
 - In notification screen, admin can manage orders that have been add by the customer.
 
-UI Design :
+### UI Design :
 
 https://www.figma.com/proto/JEj1MAGdRtQXuDOb77dm7s/Untitled?node-id=1%3A7&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A2
+
+
+### Demo :
+
+https://user-images.githubusercontent.com/91871924/151180543-cf09f4ac-c568-42f3-9aac-07c5c3e360aa.mp4
+
