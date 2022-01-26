@@ -16,6 +16,7 @@ This App have 2 type of users: Customer and Admin.
 - Logout: As a user"Customer and Admin" I can logout from the app.
 - As a user"Customer and Admin" I can update account Informations.
 - As a customer i can browsing products and make orders.
+- As a customer i can make a repair request for my device's problem.
 - As an admin i can modifying products and manage orders.
 
 
@@ -23,8 +24,9 @@ This App have 2 type of users: Customer and Admin.
 - In login screen, user can fill up his email and password.
 Customer:
 - In Registeration screen, the customer can fill up his information to complete registration.
-- In Home screen , customer can browse products and services.
-- In one product screen screen, customer can choose and make orders.
+- In Home screen , customer can browse products.
+- In single product screen screen, customer can choose and make orders.
+- In repair request screen, customer can upload a photo, share location, write problem's details and make the repair request.
 - In Settings icon, customer can manage its profile, share the app, read app agreements and Logout.
 - In Profile screen, customer can edit his information.
 Admin:
