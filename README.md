@@ -44,3 +44,6 @@ https://www.figma.com/proto/JEj1MAGdRtQXuDOb77dm7s/Untitled?node-id=1%3A7&scalin
 
 https://user-images.githubusercontent.com/91871924/151180543-cf09f4ac-c568-42f3-9aac-07c5c3e360aa.mp4
 
+### Presentation slides:
+
+https://www.canva.com/design/DAE2iCv8-QI/ZJnkaTlcQPYim57v1yHDqA/view?utm_content=DAE2iCv8-QI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
